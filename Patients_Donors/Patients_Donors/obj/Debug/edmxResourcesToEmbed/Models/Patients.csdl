@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eBloodBankModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="eBloodBankEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Patients" EntityType="eBloodBankModel.Patient" />
+    <EntitySet Name="Donors" EntityType="eBloodBankModel.Donor" />
+  </EntityContainer>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PatientBloodGroup" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PatientDisease" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Donor">
+    <Key>
+      <PropertyRef Name="DonorID" />
+    </Key>
+    <Property Type="Int32" Name="DonorID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="DonorName" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DonorBloodGroup" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MedicalReport" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DonorAddress" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Contact" />
+  </EntityType>
+</Schema>

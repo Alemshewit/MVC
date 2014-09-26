@@ -1,0 +1,15 @@
+﻿@model Patients_Donors.Models.Donor
+@{
+    ViewBag.Title = "DeletConfirm";
+}
+
+<h2>DeletConfirm</h2>
+
+<p>
+    Are you sure you ant to delet @Model.DonorName's Donor Form?
+</p>
+<form action ="@Url.Action("DeleteConfirm", "Admin", new {id = Model.DonorFormID}) method = "post">
+    <input type ="submit" value="You got that right, buddy" />
+
+
+</form>

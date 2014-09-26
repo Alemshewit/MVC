@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="eBloodBankModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="eBloodBankModelStoreContainer">
+          <EntitySet Name="BloodBanks" EntityType="eBloodBankModel.Store.BloodBanks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Donors" EntityType="eBloodBankModel.Store.Donors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Patients" EntityType="eBloodBankModel.Store.Patients" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="BloodBanks">
+          <Key>
+            <PropertyRef Name="BloodBankID" />
+          </Key>
+          <Property Name="BloodBankID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BankName" Type="varchar" MaxLength="255" />
+          <Property Name="BankAddress" Type="varchar" MaxLength="255" />
+          <Property Name="BankContact" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Donors">
+          <Key>
+            <PropertyRef Name="DonorID" />
+          </Key>
+          <Property Name="DonorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DonorName" Type="varchar" MaxLength="255" />
+          <Property Name="DonorBloodGroup" Type="varchar" MaxLength="255" />
+          <Property Name="MedicalReport" Type="varchar" MaxLength="255" />
+          <Property Name="DonorAddress" Type="varchar" MaxLength="255" />
+          <Property Name="Contact" Type="int" />
+        </EntityType>
+        <EntityType Name="Patients">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientName" Type="varchar" MaxLength="255" />
+          <Property Name="PatientBloodGroup" Type="varchar" MaxLength="255" />
+          <Property Name="PatientDisease" Type="varchar" MaxLength="255" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eBloodBankModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="eBloodBanksEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BloodBanks" EntityType="eBloodBankModel.BloodBank" />
+          <EntitySet Name="Donors" EntityType="eBloodBankModel.Donor" />
+          <EntitySet Name="Patients" EntityType="eBloodBankModel.Patient" />
+        </EntityContainer>
+        <EntityType Name="BloodBank">
+          <Key>
+            <PropertyRef Name="BloodBankID" />
+          </Key>
+          <Property Name="BloodBankID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BankName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="BankAddress" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="BankContact" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Donor">
+          <Key>
+            <PropertyRef Name="DonorID" />
+          </Key>
+          <Property Name="DonorID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DonorName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DonorBloodGroup" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MedicalReport" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DonorAddress" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Contact" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="PatientBloodGroup" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="PatientDisease" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eBloodBankModelStoreContainer" CdmEntityContainer="eBloodBanksEntities">
+          <EntitySetMapping Name="BloodBanks">
+            <EntityTypeMapping TypeName="eBloodBankModel.BloodBank">
+              <MappingFragment StoreEntitySet="BloodBanks">
+                <ScalarProperty Name="BloodBankID" ColumnName="BloodBankID" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BankAddress" ColumnName="BankAddress" />
+                <ScalarProperty Name="BankContact" ColumnName="BankContact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donors">
+            <EntityTypeMapping TypeName="eBloodBankModel.Donor">
+              <MappingFragment StoreEntitySet="Donors">
+                <ScalarProperty Name="DonorID" ColumnName="DonorID" />
+                <ScalarProperty Name="DonorName" ColumnName="DonorName" />
+                <ScalarProperty Name="DonorBloodGroup" ColumnName="DonorBloodGroup" />
+                <ScalarProperty Name="MedicalReport" ColumnName="MedicalReport" />
+                <ScalarProperty Name="DonorAddress" ColumnName="DonorAddress" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="eBloodBankModel.Patient">
+              <MappingFragment StoreEntitySet="Patients">
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="PatientBloodGroup" ColumnName="PatientBloodGroup" />
+                <ScalarProperty Name="PatientDisease" ColumnName="PatientDisease" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

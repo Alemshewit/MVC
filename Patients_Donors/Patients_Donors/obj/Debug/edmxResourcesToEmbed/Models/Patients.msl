@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="eBloodBankModelStoreContainer" CdmEntityContainer="eBloodBankEntities">
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="eBloodBankModel.Patient">
+        <MappingFragment StoreEntitySet="Patients">
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="PatientBloodGroup" ColumnName="PatientBloodGroup" />
+          <ScalarProperty Name="PatientDisease" ColumnName="PatientDisease" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donors">
+      <EntityTypeMapping TypeName="eBloodBankModel.Donor">
+        <MappingFragment StoreEntitySet="Donors">
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="DonorAddress" ColumnName="DonorAddress" />
+          <ScalarProperty Name="MedicalReport" ColumnName="MedicalReport" />
+          <ScalarProperty Name="DonorBloodGroup" ColumnName="DonorBloodGroup" />
+          <ScalarProperty Name="DonorName" ColumnName="DonorName" />
+          <ScalarProperty Name="DonorID" ColumnName="DonorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

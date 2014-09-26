@@ -1,0 +1,23 @@
+﻿@model Patients_Donors.Models.Patient
+@{
+    ViewBag.Title = "Patient Form";
+}
+
+<h2>Patient Form</h2>
+<form action="@Url.Action("Index", "Patient")" method ="post">
+    <div>
+        @Html.LabelFor(x => x.PatientName)
+        @Html.TextBoxFor(x => x.PatientName)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.PatientBloodGroup)
+        @Html.TextBoxFor(x => x.PatientBloodGroup)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.PatientDisease)
+        @Html.TextBoxFor(x => x.PatientDisease)
+    </div>
+</form>
+@section Srcripts{
+    @Scripts.Render("~/bundles/jQueryval")
+}

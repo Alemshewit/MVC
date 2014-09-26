@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eBloodBankModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="eBloodBankModelStoreContainer">
+    <EntitySet Name="Donors" EntityType="eBloodBankModel.Store.Donors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Patients" EntityType="eBloodBankModel.Store.Patients" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Donors">
+    <Key>
+      <PropertyRef Name="DonorID" />
+    </Key>
+    <Property Name="DonorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DonorName" Type="varchar" MaxLength="255" />
+    <Property Name="DonorBloodGroup" Type="varchar" MaxLength="255" />
+    <Property Name="MedicalReport" Type="varchar" MaxLength="255" />
+    <Property Name="DonorAddress" Type="varchar" MaxLength="255" />
+    <Property Name="Contact" Type="int" />
+  </EntityType>
+  <EntityType Name="Patients">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PatientName" Type="varchar" MaxLength="255" />
+    <Property Name="PatientBloodGroup" Type="varchar" MaxLength="255" />
+    <Property Name="PatientDisease" Type="varchar" MaxLength="255" />
+  </EntityType>
+</Schema>

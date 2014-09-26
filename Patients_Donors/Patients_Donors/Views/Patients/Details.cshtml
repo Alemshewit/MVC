@@ -1,0 +1,13 @@
+﻿@model Patients_Donors.Models.Patient
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+Name: @Model.PatientName<br />
+BloodGroup: @Model.PatientBloodGroup<br />
+Disease: @Model.PatientDisease<br />
+
+<p>
+    <a href ="@Url.Action("Index", "Patients")>Back to list</a>   
+</p>
